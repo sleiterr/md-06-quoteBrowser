@@ -1,17 +1,18 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
+import QuoteList from "../QuoteList/QuoteList";
 
 const FilterSort = ({ quotes, error }) => {
   return (
     <Formik
-      initialValues={{ searchTherm: "", sortBy: "author" }}
+      initialValues={{ searchTerm: "", sortBy: "author" }}
       onSubmit={() => {}}
     >
       {({ values }) => {
         let filtered = [...quotes];
 
-        if (values.searchTherm.trim() !== "") {
-          let search = values.searchTherm.toLowerCase();
+        if (values.searchTerm.trim() !== "") {
+          let search = values.searchTerm.toLowerCase();
           filtered = filtered.filter(
             (q) =>
               q.quote.toLowerCase().includes(search) ||
@@ -19,9 +20,9 @@ const FilterSort = ({ quotes, error }) => {
           );
         }
 
-        if (values.sortBy === "autor") {
+        if (values.sortBy === "author") {
           filtered.sort((a, b) => a.author.localeCompare(b.author));
-        } else if (values.sortBy === "lenght") {
+        } else if (values.sortBy === "length") {
           filtered.sort((a, b) => a.quote.length - b.quote.length);
         }
 
@@ -35,16 +36,16 @@ const FilterSort = ({ quotes, error }) => {
                 id="searchTerm"
                 name="searchTerm"
                 placeholder="Enter text or author..."
-              >
-                <label htmlFor="sortBy" style={{ marginLeft: "1rem" }}>
-                  Sort by:
-                </label>
-                <Field as="selected" id="sorBy" name="sorBy">
-                  <option value="author">Author (A-Z)</option>
-                  <option value="lenght">Quote length</option>
-                </Field>
+              />
+              <label htmlFor="sortBy" style={{ marginLeft: "1rem" }}>
+                Sort by:
+              </label>
+              <Field as="select" id="sortBy" name="sortBy">
+                <option value="author">Author (A-Z)</option>
+                <option value="length">Quote length</option>
               </Field>
             </Form>
+            <QuoteList quotes={filtered} />
           </div>
         );
       }}
