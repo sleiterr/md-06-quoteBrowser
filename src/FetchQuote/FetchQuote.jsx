@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import FilterSort from "../components/FilterSort/FilterSort";
 
 const FetchQuote = () => {
-  const [quote, setQuote] = useState([]);
+  const [quotes, setQuotes] = useState([]);
   const [error, setError] = useState([]);
 
   useEffect(() => {
@@ -11,13 +12,15 @@ const FetchQuote = () => {
 
         if (!res.ok) throw new Error(`HTTP! error! ${res.status}`);
         const data = await res.json();
-        setQuote(data.quotes);
+        setQuotes(data.quotes);
       } catch (error) {
         setError(error.message);
       }
     };
     fetchQuote();
   }, []);
+
+  return <FilterSort quotes={quotes} error={error} />;
 };
 
 export default FetchQuote;
