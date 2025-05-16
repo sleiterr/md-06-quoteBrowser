@@ -70,3 +70,55 @@ button {
   padding: 0 15px;
 }
 
+.detailsContainer {
+  padding: 120px 0;
+}
+
+.detailsCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quoteTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 52px;
+  color: #333;
+
+  margin-bottom: 60px;
+}
+
+.quoteSubtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+
+  color: #333;
+  width: 620px;
+}
+
+.quoteAuthor {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+
+  color: #2d7cf1;
+}
+
+.quoteLink {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+
+  color: #ea2df1;
+}
+
+.linkBox {
+  margin-top: 60px;
+}

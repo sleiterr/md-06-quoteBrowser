@@ -8,12 +8,24 @@ const QuoteDetail = () => {
   const { quotes } = useQoutes();
   const quote = quotes.find((q) => String(q.id) === id);
 
+  if (!quote) return <p>Quote not found</p>;
+
   return (
-    <div>
-      <h2>Quote Details</h2>
-      <QuoteCard quote={quote} />
-      <Link to="/">← Back to Home</Link>
-    </div>
+    <section>
+      <div className="detailsContainer container">
+        <div className="detailsCart">
+          <h2 className="quoteTitle">Quote Details</h2>
+          <p className="quoteSubtitle">{quote.quote}</p>
+          <p className="quoteAuthor">{quote.author}</p>
+          {/* <QuoteCard quote={quote} /> */}
+          <div className="linkBox">
+            <Link className="quoteLink" to="/">
+              ← Back to Home
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
