@@ -1,17 +1,13 @@
+//QuoteList.jsx
 import React from "react";
+import QuoteCard from "../QouteCard/QuoteCard";
 
 const QuoteList = ({ quotes }) => {
   return (
     <div>
-      <ul>
-        {quotes.map((quote) => (
-          <li key={quote.id}>
-            <p>{quote.quote}</p>
-            <p>{quote.author}</p>
-            <p></p>
-          </li>
-        ))}
-      </ul>
+      {quotes.map((quote) => (
+        <QuoteCard key={quote.id} quote={quote} />
+      ))}
     </div>
   );
 };
