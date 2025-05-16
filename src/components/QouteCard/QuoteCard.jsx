@@ -9,11 +9,17 @@ const QuoteCard = ({ quote }) => {
 
   return (
     <div className={styles.ListItem}>
-      <p className={styles.quoteText}>{quote.quote}</p>
-      <p className={styles.quoteAuthor}>{quote.author}</p>
-      <Link className={styles.quoteLink} to={`/quote/${quote.id}`}>
-        View Details
-      </Link>
+      <div className={styles.info}>
+        <div className={ styles.text}>
+          <p className={styles.quoteText}>{quote.quote}</p>
+        </div>
+        <div className={styles.linkCart}>
+          <p className={styles.quoteAuthor}>{quote.author}</p>
+          <Link className={styles.quoteLink} to={`/quote/${quote.id}`}>
+            View Details
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
