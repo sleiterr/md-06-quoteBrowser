@@ -2,6 +2,7 @@
 
 import React from "react";
 import styles from "./QuoteCard.module.css";
+import { Heart, MoveLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const QuoteCard = ({ quote }) => {
@@ -10,14 +11,17 @@ const QuoteCard = ({ quote }) => {
   return (
     <div className={styles.ListItem}>
       <div className={styles.info}>
-        <div className={ styles.text}>
+        <div className={styles.text}>
+          <p className={styles.quoteAuthor}>{quote.author}</p>
           <p className={styles.quoteText}>{quote.quote}</p>
         </div>
         <div className={styles.linkCart}>
-          <p className={styles.quoteAuthor}>{quote.author}</p>
           <Link className={styles.quoteLink} to={`/quote/${quote.id}`}>
-            View Details
+            <MoveLeft /> View Details
           </Link>
+          <button className={styles.like} >
+            <Heart size={36} />
+          </button>
         </div>
       </div>
     </div>

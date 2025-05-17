@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { QouteContext } from "./QuoteContext/QuoteContext";
 
 import Home from "../src/Pages/Home";
+import Header from "./components/Header/Header";
 import QuoteDetail from "../src/Pages/QuoteDetail";
 import "./App.css";
 
@@ -27,15 +28,20 @@ function App() {
   }, []);
 
   return (
-    <QouteContext.Provider value={{ quotes, error }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/quote/:id" element={<QuoteDetail />} />
-          <Route />
-        </Routes>
-      </BrowserRouter>
-    </QouteContext.Provider>
+    <>
+      <main>
+        <QouteContext.Provider value={{ quotes, error }}>
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/quote/:id" element={<QuoteDetail />} />
+              <Route />
+            </Routes>
+          </BrowserRouter>
+        </QouteContext.Provider>
+      </main>
+    </>
   );
 }
 
