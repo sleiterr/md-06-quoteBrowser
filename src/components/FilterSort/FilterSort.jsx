@@ -4,7 +4,7 @@ import { Formik, Form, Field } from "formik";
 import QuoteList from "../QuoteList/QuoteList";
 import styles from "./FilterSort.module.css";
 
-const FilterSort = ({ quotes, error }) => {
+const FilterSort = ({ quotes, error, addToFavorites }) => {
   return (
     <Formik
       initialValues={{ searchTerm: "", sortBy: "author" }}
@@ -51,7 +51,7 @@ const FilterSort = ({ quotes, error }) => {
                     <option value="length">Quote length</option>
                   </Field>
                 </Form>
-                <QuoteList quotes={filtered} />
+                <QuoteList quotes={filtered} addToFavorites={addToFavorites} />
               </div>
             </div>
           </section>

@@ -1,6 +1,6 @@
 //Pages/QouteDetail.jsx
 import { useParams, Link } from "react-router-dom";
-import QuoteCard from "../components/QouteCard/QuoteCard";
+// import QuoteCard from "../components/QouteCard/QuoteCard";
 import { useQoutes } from "../QuoteContext/QuoteContext";
 
 const QuoteDetail = () => {

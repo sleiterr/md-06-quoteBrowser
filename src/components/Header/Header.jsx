@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header>
       <Link to="/">Home</Link>
-      <Link>
+      <Link to="/favorites">
         <MessageCircleHeart size={24} />
       </Link>
     </header>

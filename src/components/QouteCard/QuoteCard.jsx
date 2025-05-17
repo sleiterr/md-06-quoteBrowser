@@ -5,7 +5,7 @@ import styles from "./QuoteCard.module.css";
 import { Heart, MoveLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const QuoteCard = ({ quote }) => {
+const QuoteCard = ({ quote, addToFavorites }) => {
   if (!quote) return <p>No quote data</p>;
 
   return (
@@ -19,7 +19,7 @@ const QuoteCard = ({ quote }) => {
           <Link className={styles.quoteLink} to={`/quote/${quote.id}`}>
             <MoveLeft /> View Details
           </Link>
-          <button className={styles.like} >
+          <button onClick={() => addToFavorites(quote)} className={styles.like}>
             <Heart size={36} />
           </button>
         </div>
