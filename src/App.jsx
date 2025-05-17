@@ -53,7 +53,7 @@ function App() {
       <main>
         <QouteContext.Provider value={{ quotes, error, addToFavorites }}>
           <BrowserRouter>
-            <Header />
+            <Header favoriteCount={favorites.length} />
             <Routes>
               <Route
                 path="/"
