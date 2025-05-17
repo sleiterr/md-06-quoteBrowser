@@ -2,6 +2,8 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import QuoteList from "../QuoteList/QuoteList";
+import TextField from "@mui/material/TextField";
+import MenuItem from "@mui/material/MenuItem";
 import styles from "./FilterSort.module.css";
 
 const FilterSort = ({ quotes, error, addToFavorites }) => {
@@ -30,29 +32,53 @@ const FilterSort = ({ quotes, error, addToFavorites }) => {
 
         return (
           <section>
-            <div>
-              <div>
+            <div className="container">
+              <div className={styles.formContainer}>
                 {error && <p style={{ color: "red" }}>{error}</p>}
                 <Form>
                   <label className={styles.label} htmlFor="searchTherm">
                     Search for quotes:
                   </label>
                   <Field
+                    as={TextField}
+                    id="filled-basic"
                     type="text"
-                    id="searchTerm"
                     name="searchTerm"
-                    placeholder="Enter text or author..."
+                    label="Search for quotes..."
+                    variant="filled"
+                    sx={{
+                      width: 180,
+                      maxWidth: "100%",
+                      "& .MuiInputBase-input": {
+                        fontSize: "16px",
+                        color: "#333",
+                        letterSpacing: "0.04em",
+                      },
+                      "& .MuiInputLabel-root": {
+                        fontSize: "14px",
+                        color: "#666",
+                        letterSpacing: "0.02em",
+                      },
+                    }}
                   />
                   <label htmlFor="sortBy" style={{ marginLeft: "1rem" }}>
                     Sort by:
                   </label>
-                  <Field as="select" id="sortBy" name="sortBy">
-                    <option value="author">Author (A-Z)</option>
-                    <option value="length">Quote length</option>
+                  <Field
+                    as={TextField}
+                    select
+                    label="Sort By"
+                    id="sortBy"
+                    name="sortBy"
+                    variant="filled"
+                    sx={{ width: 180, maxWidth: "100%" }}
+                  >
+                    <MenuItem value="author">Author (A-Z)</MenuItem>
+                    <MenuItem value="length">Quote length</MenuItem>
                   </Field>
                 </Form>
-                <QuoteList quotes={filtered} addToFavorites={addToFavorites} />
               </div>
+              <QuoteList quotes={filtered} addToFavorites={addToFavorites} />
             </div>
           </section>
         );

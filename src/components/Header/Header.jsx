@@ -5,10 +5,10 @@ import styles from "./Header.module.css";
 
 const Header = ({ favoriteCount }) => {
   return (
-    <header>
+    <header className={styles.header}>
       <Link to="/">Home</Link>
-      <Link to="/favorites">
-        <MessageCircleHeart size={24} />
+      <Link to="/favorites" className={styles.headerIcon}>
+        <MessageCircleHeart size={42} />
         {favoriteCount > 0 && (
           <span className={styles.caunter}>{favoriteCount}</span>
         )}

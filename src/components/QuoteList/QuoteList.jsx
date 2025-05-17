@@ -6,7 +6,7 @@ import styles from "./QuoteList.module.css";
 const QuoteList = ({ quotes, addToFavorites }) => {
   return (
     <section>
-      <div className={styles.quoteContainer}>
+      <div className={`${styles.quoteContainer}`}>
         {quotes.map((quote) => (
           <QuoteCard
             key={quote.id}

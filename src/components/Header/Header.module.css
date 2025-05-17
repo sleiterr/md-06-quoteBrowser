@@ -1,7 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background-color: rgb(102, 157, 207);
+}
+
+.headerIcon {
+  position: relative;
+
+  color: #fff;
+  cursor: pointer;
+}
+
 .caunter {
+  position: absolute;
+  top: -5px;
+  right: -6px;
+  font-size: 18px;
+  color: #fff;
   background-color: red;
-  color: #333;
   border-radius: 50%;
-  padding: 0.3rem 0.6rem;
-  font-size: 0.5rem;
+  padding: 0.4rem 0.8rem;
 }
