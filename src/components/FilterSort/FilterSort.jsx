@@ -49,6 +49,7 @@ const FilterSort = ({ quotes, error, addToFavorites }) => {
                     sx={{
                       width: 180,
                       maxWidth: "100%",
+                      marginRight: "26px",
                       "& .MuiInputBase-input": {
                         fontSize: "16px",
                         color: "#333",
@@ -61,7 +62,7 @@ const FilterSort = ({ quotes, error, addToFavorites }) => {
                       },
                     }}
                   />
-                  <label htmlFor="sortBy" style={{ marginLeft: "1rem" }}>
+                  <label className={styles.label} htmlFor="sortBy">
                     Sort by:
                   </label>
                   <Field
@@ -71,10 +72,25 @@ const FilterSort = ({ quotes, error, addToFavorites }) => {
                     id="sortBy"
                     name="sortBy"
                     variant="filled"
-                    sx={{ width: 180, maxWidth: "100%" }}
+                    sx={{
+                      width: 180,
+                      maxWidth: "100%",
+                      "& .MuiInputBase-input": {
+                        fontSize: "16px",
+                        letterSpacing: "0.04em",
+                      },
+                      "& .MuiInputLabel-root": {
+                        fontSize: "14px",
+                        letterSpacing: "0.04em",
+                      },
+                    }}
                   >
-                    <MenuItem value="author">Author (A-Z)</MenuItem>
-                    <MenuItem value="length">Quote length</MenuItem>
+                    <MenuItem value="author" sx={{ fontSize: "14px" }}>
+                      Author (A-Z)
+                    </MenuItem>
+                    <MenuItem value="length" sx={{ fontSize: "14px" }}>
+                      Quote length
+                    </MenuItem>
                   </Field>
                 </Form>
               </div>

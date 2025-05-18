@@ -11,5 +11,14 @@
 .label {
   font-weight: 500;
   font-size: 22px;
+  color: #333;
   letter-spacing: 0.02em;
+
+  margin-right: 22px;
+}
+
+Form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
